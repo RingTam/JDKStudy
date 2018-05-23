@@ -60,16 +60,16 @@ public class TestDom {
 
     public void recursive(Element element) {
         if(element.hasChildNodes()) {
-            System.out.println("标签:" + element.getTagName());
+            System.out.println("Tag:" + element.getTagName());
         } else {
-            System.out.println("标签:" + element.getTagName() + " 标签值:" + element.getTextContent());
+            System.out.println("Tag:" + element.getTagName() + " TagValue:" + element.getTextContent());
         }
 
         if(element.hasAttributes()) {
             NamedNodeMap namedNodeMap = element.getAttributes();
             for (int i = 0; i < namedNodeMap.getLength(); i++) {
                 Node n = namedNodeMap.item(i);
-                System.out.println("[属性:" + n.getNodeName() + " 属性值:" + n.getNodeValue() + "]");
+                System.out.println("[Attribute:" + n.getNodeName() + " AttributeValue:" + n.getNodeValue() + "]");
             }
         }
         if(element.hasChildNodes()) {

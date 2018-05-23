@@ -31,21 +31,20 @@ public class TestSax extends DefaultHandler2 {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        System.out.println("标签:" + qName);
+        System.out.println("Tag:" + qName);
         for (int i = 0; i < attributes.getLength(); i++) {
             String name = attributes.getQName(i);
             String value = attributes.getValue(i);
-            System.out.println("[属性:" + name + " 属性值:" + value + "]");
+            System.out.println("[Attribute:" + name + " AttributeValue:" + value + "]");
         }
         super.startElement(uri, localName, qName, attributes);
     }
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
-        String trim = new String(ch, start, length).trim();
-        trim = trim.replaceAll("\n", "");
+        String trim = new String(ch, start, length).trim();//Tag not Content, return Empty String.
         if (trim.length() > 0) {
-            System.out.println("标签值:" + trim);
+            System.out.println("TagValue:" + trim);
         }
         super.characters(ch, start, length);
     }
