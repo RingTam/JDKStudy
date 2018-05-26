@@ -52,8 +52,8 @@ public class TestProducerConsumer {
                         System.out.println("已生产:" + queue.size() + "个，当前生产：" + alphabet);
                     } else {
                         try {
-                            lock.notifyAll();
                             System.out.println("-----------------------------------------");
+                            lock.notifyAll();
                             lock.wait();
                         } catch (InterruptedException e) {
                             //Ignore
@@ -84,8 +84,8 @@ public class TestProducerConsumer {
                     }
                     if(queue.size() == 0) {
                         try {
-                            lock.notifyAll();
                             System.out.println("-----------------------------------------");
+                            lock.notifyAll();
                             lock.wait();
                         } catch (InterruptedException e) {
                             //Ignore
