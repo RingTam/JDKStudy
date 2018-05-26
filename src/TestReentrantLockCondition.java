@@ -36,7 +36,7 @@ public class TestReentrantLockCondition {
 
         @Override
         public void run() {
-            lock.lock();
+            lock.lock();//await+锁监视（必须）。
             try {
                 while (true) {
                     Thread.sleep(300);
@@ -53,7 +53,7 @@ public class TestReentrantLockCondition {
             } catch (InterruptedException e) {
                 //Ignore
             } finally {
-                lock.unlock();
+                lock.unlock();//在最终执行的地方，解锁
             }
         }
     }
@@ -62,7 +62,7 @@ public class TestReentrantLockCondition {
 
         @Override
         public void run() {
-            lock.lock();
+            lock.lock();//await+锁监视（必须）。
             try {
                 while (true) {
                     Thread.sleep(300);
@@ -77,7 +77,7 @@ public class TestReentrantLockCondition {
             } catch (InterruptedException e) {
                 //Ignore
             } finally {
-                lock.unlock();
+                lock.unlock();//在最终执行的地方，解锁
             }
         }
     }
