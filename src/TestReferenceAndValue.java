@@ -10,13 +10,16 @@ public class TestReferenceAndValue {
         String s = "a";
         C c = new C();
         c.c1(s);
+        //值拷贝，c1方法里修改后，原字符串值不变。
         System.out.println(s);
+        System.out.println("-------------------------------------------");
 
-        DReference reference = new DReference();
-        reference.setS("a");
+        Reference reference = new Reference();
+        reference.setStr("a");
         D d = new D();
         d.d1(reference);
-        System.out.println(reference.getS());
+        //引用传值，则不会出现这种情况。
+        System.out.println(reference.getStr());
 
     }
 
@@ -32,20 +35,20 @@ class C {
 
 class D {
 
-    public void d1(DReference reference) {
-        reference.setS("b");
+    public void d1(Reference reference) {
+        reference.setStr("b");
     }
 }
 
-class DReference {
+class Reference {
 
-    private String s = "a";
+    private String str = "";
 
-    public String getS() {
-        return s;
+    public String getStr() {
+        return str;
     }
 
-    public void setS(String s) {
-        this.s = s;
+    public void setStr(String str) {
+        this.str = str;
     }
 }
