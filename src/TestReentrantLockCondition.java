@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class TestReentrantLockCondition {
 
-    final Lock lock = new ReentrantLock();
+    final Lock lock = new ReentrantLock();//by default, value is false/非公平锁
     final Condition notFull = lock.newCondition();
     final Condition notEmpty = lock.newCondition();
     private Queue<String> queue = new ConcurrentLinkedQueue<>();
