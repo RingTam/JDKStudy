@@ -41,6 +41,11 @@ public class TestProducerConsumer {
         public void run() {
             synchronized (lock) {
                 while (true) {
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        //Ignore
+                    }
                     if (queue.size() < 5) {
                         String alphabet = this.alphabet[new Random().nextInt(26)];
                         queue.offer(this.alphabet[new Random().nextInt(26)]);
@@ -72,6 +77,11 @@ public class TestProducerConsumer {
         public void run() {
             synchronized(lock) {
                 while(true) {
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        //Ignore
+                    }
                     if(queue.size() == 0) {
                         try {
                             lock.notifyAll();
@@ -82,11 +92,6 @@ public class TestProducerConsumer {
                         }
                     } else {
                         System.out.println("可消费:" + queue.size() + "个，当前消费:" + queue.poll());
-                    }
-                    try {
-                        Thread.sleep(300);
-                    } catch (InterruptedException e) {
-                        //Ignore
                     }
                 }
             }
