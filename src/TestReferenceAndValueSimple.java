@@ -37,8 +37,8 @@ public class TestReferenceAndValueSimple {
         System.out.println(Arrays.toString(simple.c));
     }
 
-    public void change(Integer a, int b) {//方法参数属于值传递，只修改拷贝的副本
-        //java都是采用值传递，修改无效
+    public void change(Integer a, int b) {//方法参数属于值传递，只修改拷贝的副本【栈:a --> 堆:0  <--  a1】
+        //堆:1 --> a1，原引用指向的内容不变。
         a = 1;
         //java都是采用值传递，修改无效
         b = 1;
