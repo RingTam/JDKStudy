@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 /**
  * 类       名:
  * 说       明:
@@ -11,12 +13,13 @@
 public class TestStringReverse {
 
     public static void main(String[] args) {
-        System.out.println(reverse("abc"));
-    }
-
-    public static String reverse(String str) {
-        if (str == null || str.length() <= 1)
-            return str;
-        return reverse(str.substring(1)) + str.charAt(0);
+        // Java 8
+        LocalDateTime dt = LocalDateTime.now();
+        System.out.println(dt.getYear());
+        System.out.println(dt.getMonthValue());     // 1 - 12
+        System.out.println(dt.getDayOfMonth());
+        System.out.println(dt.getHour());
+        System.out.println(dt.getMinute());
+        System.out.println(dt.getSecond());
     }
 }
