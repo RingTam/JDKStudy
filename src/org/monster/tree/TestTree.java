@@ -1,4 +1,4 @@
-package org.monster.binarytree;
+package org.monster.tree;
 
 /**
  * @author Monster
