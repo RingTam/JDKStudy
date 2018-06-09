@@ -1,4 +1,4 @@
-package xml.sax;
+package org.monster.xml.sax;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -18,9 +18,9 @@ import java.nio.file.Paths;
 public class TestSax extends DefaultHandler2 {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
         TestSax testSax = new TestSax();
-        testSax.test(Paths.get("src", "xml", "web.xml").toFile());
+        testSax.test(Paths.get("src", "org/monster/xml", "web.xml").toFile());
         System.out.println("--------------------------------------------------------------------");
-        testSax.test(Paths.get("src", "xml", "server.xml").toFile());
+        testSax.test(Paths.get("src", "org/monster/xml", "server.xml").toFile());
     }
 
     public void test(File f) throws ParserConfigurationException, IOException, SAXException {

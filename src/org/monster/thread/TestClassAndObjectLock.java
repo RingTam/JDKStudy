@@ -1,3 +1,5 @@
+package org.monster.thread;
+
 /**
  * 类名：类和对象锁
  * 作者：Monster
@@ -7,7 +9,7 @@
 public class TestClassAndObjectLock {
 
     public static void main(String[] args) {
-        //测试 - 线程1获取锁进入方法A，线程2是否能进入方法B。
+        //测试 - 线程1获取锁进入方法A，线程2这时是否能进入方法B？
         Calculate calculate = new Calculate();
         calculate.setType(0);
         Thread ta = new Thread(calculate);
@@ -42,10 +44,6 @@ class Calculate implements Runnable {
 
     public synchronized void testB() {
         System.out.println("线程2获得锁，进来了...");
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-        }
     }
 
     @Override

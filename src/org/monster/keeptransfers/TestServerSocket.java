@@ -1,4 +1,4 @@
-package keeptransfers;
+package org.monster.keeptransfers;
 
 import java.io.IOException;
 import java.io.InputStream;

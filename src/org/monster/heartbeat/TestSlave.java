@@ -1,4 +1,4 @@
-package heartbeat;
+package org.monster.heartbeat;
 
 import java.io.IOException;
 import java.net.Socket;

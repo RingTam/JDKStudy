@@ -1,4 +1,4 @@
-package classloader;
+package org.monster.classloader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

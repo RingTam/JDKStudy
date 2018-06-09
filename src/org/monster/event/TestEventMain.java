@@ -1,4 +1,4 @@
-package event;
+package org.monster.event;
 
 import java.util.ArrayList;
 import java.util.List;

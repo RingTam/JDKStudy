@@ -1,4 +1,4 @@
-package xml.dom;
+package org.monster.xml.dom;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -17,9 +17,9 @@ public class TestDom {
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
         TestDom testDom = new TestDom();
-        testDom.test(Paths.get("src", "xml", "web.xml").toFile());
+        testDom.test(Paths.get("src", "org/monster/xml", "web.xml").toFile());
         System.out.println("--------------------------------------------------------------------");
-        testDom.test(Paths.get("src", "xml", "server.xml").toFile());
+        testDom.test(Paths.get("src", "org/monster/xml", "server.xml").toFile());
     }
 
     public void test(File f) throws ParserConfigurationException, IOException, SAXException {

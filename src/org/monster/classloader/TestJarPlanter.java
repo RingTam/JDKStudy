@@ -1,4 +1,4 @@
-package classloader;
+package org.monster.classloader;
 
 import java.io.File;
 import java.io.IOException;
