@@ -7,4 +7,8 @@
 public class JNITest {
 
     public native String hello(int a, double b);
+
+    public static void main(String[] args) {
+        new JNITest().hello(1,2);
+    }
 }
