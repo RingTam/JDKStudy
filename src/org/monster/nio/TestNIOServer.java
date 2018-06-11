@@ -1,3 +1,5 @@
+package org.monster.nio;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -11,8 +13,7 @@ import java.util.logging.Logger;
 
 public class TestNIOServer {
 
-    private final static Logger logger = Logger.getLogger(
-            TestNIOServer.class.getName());
+    private final static Logger logger = Logger.getLogger(TestNIOServer.class.getName());
 
     private static Selector selector;
 

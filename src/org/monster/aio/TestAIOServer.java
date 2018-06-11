@@ -1,3 +1,5 @@
+package org.monster.aio;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -15,12 +17,20 @@ import java.util.concurrent.Executors;
  * 说明：
  */
 public class TestAIOServer {
+
     public static void main(String[] args) throws IOException {
+        TestAIOServer testAIOServer = new TestAIOServer();
+        testAIOServer.test();
+    }
+
+    public void test() throws IOException {
+
         ExecutorService executorService = Executors.newCachedThreadPool();
         AsynchronousChannelGroup asg = AsynchronousChannelGroup.withCachedThreadPool(
                 executorService, 100);
         AsynchronousServerSocketChannel ass = AsynchronousServerSocketChannel.open(asg);
         ass.bind(new InetSocketAddress(9090));
+
         if (ass.isOpen()) {
             ass.accept("Hello World!", new CompletionHandler<AsynchronousSocketChannel, Object>() {
 
