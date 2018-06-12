@@ -1,4 +1,4 @@
-package org.monster.thread;
+package org.monster.thread.objectlock;
 
 /**
  * 类名：类和对象锁
