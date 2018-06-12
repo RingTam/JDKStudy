@@ -9,8 +9,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import static java.nio.file.Paths.get;
-
 /**
  * 类名：
  * 作者：Monster
@@ -20,11 +18,21 @@ import static java.nio.file.Paths.get;
 public class TestFiles {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        Path source = get("src", "read.txt");
-        Path target = get("src", "readCopy.txt");
+
+        //当前工作目录
+        Path  illegalPath = Paths.get(System.getProperty("user.dir"), ".", "..", "src", ".", "..");
+        //去除.和..的文件夹
+        System.out.println(illegalPath.normalize());
+
+        //NIO Path的使用
+        Path source = Paths.get("src", "read.txt");
+        Path target = Paths.get("src", "readCopy.txt");
+        System.out.println("源文件：" + source.toAbsolutePath());
+        System.out.println("目标文件：" + target.toAbsolutePath());
+
         Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
-        Path userDir = get(System.getProperty("user.dir"));
-        System.out.println(userDir.normalize());
+
+        Path userDir = Paths.get(System.getProperty("user.dir"));
         System.out.println("------------------walkFileTree---------------------");
         Files.walkFileTree(userDir, new SimpleFileVisitor<Path>() {
 
