@@ -1,4 +1,4 @@
-package org.monster.linkedlist.singlylinkedlistFirst;
+package org.monster.linkedlist.singlylinkedlistfirst;
 
 import java.util.Iterator;
 
@@ -8,10 +8,10 @@ import java.util.Iterator;
  * 时间：2016/6/14 18:00
  * 说明：
  */
-public class TestSinglyLinkedFirstList {
+public class TestSinglyLinkedListFirst {
 
     public static void main(String[] args) {
-        new TestSinglyLinkedFirstList().test();
+        new TestSinglyLinkedListFirst().test();
     }
 
     /**
@@ -25,10 +25,11 @@ public class TestSinglyLinkedFirstList {
         singlyLinkedList.addFirst(4);
         singlyLinkedList.addFirst(5);
 
+        singlyLinkedList.forEach();
+
         singlyLinkedList.removeFirst();
         singlyLinkedList.removeFirst();
 
-        singlyLinkedList.forEach();
 
         System.out.println("---------------------------------------");
 
