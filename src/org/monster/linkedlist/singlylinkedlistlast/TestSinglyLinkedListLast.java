@@ -19,14 +19,15 @@ public class TestSinglyLinkedListLast {
      */
     public void test() {
         SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
+        //[1,2,3,4,5]
         singlyLinkedList.addLast(1);
         singlyLinkedList.addLast(2);
         singlyLinkedList.addLast(3);
         singlyLinkedList.addLast(4);
         singlyLinkedList.addLast(5);
 
-//        singlyLinkedList.removeFirst();
-//        singlyLinkedList.removeFirst();
+        singlyLinkedList.removeLast();
+        singlyLinkedList.removeLast();
 
         singlyLinkedList.forEach();
 
@@ -84,15 +85,16 @@ public class TestSinglyLinkedListLast {
             newLast.element = element;
             last.next = newLast;
             last = newLast;
-            if(first == null) {
+            if (first == null) {
                 first = newLast;
             }
         }
 
         /**
          * 移除
+         * TODO 未能实现！如果不是双向链表，如何获取上一个元素？
          */
-        void removeFirst() {
+        void removeLast() {
         }
 
         /**
@@ -150,8 +152,8 @@ public class TestSinglyLinkedListLast {
              */
             @Override
             public boolean hasNext() {
-                E element = node.element;
-                return element != null;
+                return node != null
+                        && node.element != null;
             }
 
             /**
