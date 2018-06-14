@@ -19,6 +19,8 @@ public class TestSinglyLinkedListFirst {
      */
     public void test() {
         SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
+
+        System.out.println("[添加]-----------------------------------");
         //[5,4,3,2,1]
         singlyLinkedList.addFirst(1);
         singlyLinkedList.addFirst(2);
@@ -28,16 +30,22 @@ public class TestSinglyLinkedListFirst {
 
         singlyLinkedList.forEach();
 
+        System.out.println("[移除]-----------------------------------");
+
         singlyLinkedList.removeFirst();
         singlyLinkedList.removeFirst();
-
-
-        System.out.println("---------------------------------------");
 
         Iterator<Integer> iterator = singlyLinkedList.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+
+        System.out.println("[插入]-----------------------------------");
+        singlyLinkedList.insertAfter(3, 33);
+        singlyLinkedList.insertAfter(2, 22);
+        singlyLinkedList.insertAfter(1, 11);
+
+        singlyLinkedList.forEach();
 
     }
 
@@ -81,6 +89,28 @@ public class TestSinglyLinkedListFirst {
             newFirst.element = element;
             newFirst.next = first;
             first = newFirst;
+        }
+
+        /**
+         * 插入一个元素后
+         * TODO 不推荐使用，插入时需要遍历整个链表，只作插入原理演示。
+         * v         v
+         * [A,&B]->[B,&C]->[C,null]  >>> [A,&G]-> [G, &B] -> [B,&C]->[C,null]
+         *
+         * @param target  目标
+         * @param element 元素
+         */
+        void insertAfter(E target, E element) {
+            Node<E> node = first;
+            while (node.element != null) {
+                if (node.element == target) {
+                    Node<E> newNext = new Node<>();
+                    newNext.element = element;
+                    newNext.next = node.next;
+                    node.next = newNext;
+                }
+                node = node.next;
+            }
         }
 
         /**
