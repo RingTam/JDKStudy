@@ -19,6 +19,7 @@ public class TestSinglyLinkedListFirst {
      */
     public void test() {
         SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
+        //[5,4,3,2,1]
         singlyLinkedList.addFirst(1);
         singlyLinkedList.addFirst(2);
         singlyLinkedList.addFirst(3);
@@ -83,10 +84,11 @@ public class TestSinglyLinkedListFirst {
         }
 
         /**
-         * 移除
+         * 移除头
          */
         void removeFirst() {
             Node<E> newFirst = first.next;
+            first.element = null;
             first.next = null;
             first = newFirst;
         }
@@ -146,8 +148,8 @@ public class TestSinglyLinkedListFirst {
              */
             @Override
             public boolean hasNext() {
-                E element = node.element;
-                return element != null;
+                return node != null
+                        && node.element != null;
             }
 
             /**
