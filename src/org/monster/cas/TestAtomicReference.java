@@ -41,7 +41,7 @@ public class TestAtomicReference {
                     //Ignore
                 }
                 boolean b2 = atomicReference.compareAndSet("Hello World!", "Hello World! Java");
-                System.out.println(Thread.currentThread().getName() + "（2）:" + b2);
+                System.out.println(Thread.currentThread().getName() + ":" + b2);
             }).start();
         }
         try {
