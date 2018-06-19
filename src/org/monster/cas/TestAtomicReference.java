@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * 类名：测试原子整数型
+ * 类名：测试原子引用
  * 作者：Monster
  * 时间：2018/6/19 10:13
  * 说明：
@@ -15,16 +15,6 @@ public class TestAtomicReference {
 
     public static void main(String[] args) {
         TestAtomicReference testAtomicReference = new TestAtomicReference();
-
-
-        testAtomicReference.test();
-        try {
-            TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            //Ignore
-        }
-        System.out.println("------------------------------------------------------");
-
         testAtomicReference.test();
 
     }
@@ -49,6 +39,6 @@ public class TestAtomicReference {
         } catch (InterruptedException e) {
             //Ignore
         }
-        System.out.println("原子值:" + atomicReference.get());
+        System.out.println("最新值:" + atomicReference.get());
     }
 }

@@ -63,7 +63,7 @@ public class TestAtomicIntegerArray {
         } catch (InterruptedException e) {
             //Ignore
         }
-        System.out.println("原子值:" + atomicIntegerArray.get(0));
+        System.out.println("最新值:" + atomicIntegerArray.get(0));
     }
 
     /**
@@ -86,7 +86,7 @@ public class TestAtomicIntegerArray {
         } catch (InterruptedException e) {
             //Ignore
         }
-        System.out.println("原子值（2）:" + atomicInteger2Array.get(0));
+        System.out.println("最新值（2）:" + atomicInteger2Array.get(0));
     }
 
     /**
